@@ -48,7 +48,7 @@ class PiggyGameBot:
     
     def load_accounts(self) -> List[Dict[str, str]]:
         """加载账户信息"""
-        json_accounts_path = "config/accounts.json"
+        json_accounts_path = "config/accounts1.json"
         
         try:
             with open(json_accounts_path, 'r', encoding='utf-8') as f:
@@ -64,7 +64,7 @@ class PiggyGameBot:
                         })
                 return accounts
         except FileNotFoundError:
-            print("错误: 账户配置文件不存在，请创建config/accounts.json文件")
+            print("错误: 账户配置文件不存在，请创建config/accounts1.json文件")
             return []
         except (json.JSONDecodeError, KeyError) as e:
             print(f"警告: JSON账户配置文件格式错误: {e}")
